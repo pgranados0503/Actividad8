@@ -1,14 +1,17 @@
 
 package actividad8;
 import java.util.LinkedList;
-import java.util.*;
 import java.util.List;
 import actividad8.Card;
+import java.io.Console;
+import java.util.Scanner;
+import java.util.Random;
 
 public class Deck {
 
 public static void Deck(){
-
+Scanner reader = new Scanner(System.in);
+        int Menu;
         Card c1 = new Card ("Tréboles","Negro", "2");
         Card c2 = new Card ("Tréboles","Negro", "3");
         Card c3 = new Card ("Tréboles","Negro", "4");
@@ -114,81 +117,62 @@ public static void Deck(){
         deckCards.add(c50);
         deckCards.add(c51);
         deckCards.add(c52);
-        
-
-        System.out.println("Se mezcló el Deck."); 
-
-
-        Random numR = new Random();
-        int nr1 = numR.nextInt(deckCards.size());
-
-
-        deckCards.remove(nr1);
-        System.out.println("Head:"); 
-        System.out.println("La primer carta es: " + deckCards.get(nr1)); 
-        System.out.println("Quedan " + deckCards.size() + " cartas");
-        
-
-        
+    
+         System.out.println("=================================");
+         System.out.println("Bienvenido al Poker!");
+         System.out.println("Selecciona una opcion");
+         System.out.println("=================================");
+         System.out.println("1. Mezclar Deck");
+         System.out.println("2. Sacar una carta");
+         System.out.println("3. Carta al azar");
+         System.out.println("4. Generar una mano de 5 cartas");
+         System.out.println("0. Salir");
+         Menu = reader.nextInt();   
+  
+    if (Menu == 1){
+                    System.out.println("Se mezcló el Deck."); }
+    if (Menu == 2){
+                    Random numR = new Random();
+                    int nr1 = numR.nextInt(deckCards.size());
+                    deckCards.remove(nr1);
+                    System.out.println("Opción seleccionada: 2"); 
+                    System.out.println("La carta es: " + deckCards.get(nr1)); 
+                    System.out.println("Quedan " + deckCards.size() + " cartas");}
+    if (Menu == 3){
+                    Random numR2 = new Random();
+                    int nr2 = numR2.nextInt(deckCards.size());     
+                    System.out.println("Pick:"); 
+                    deckCards.remove(nr2);
+                    System.out.println("Carta removida: " + deckCards.get(nr2)); 
+                    System.out.println("Quedan " + deckCards.size() + " cartas");}
+    if (Menu == 4){
+                    Random numR3 = new Random();
+                    int nr3 = numR3.nextInt(deckCards.size());
+                    deckCards.remove(nr3);
+                    System.out.println("La carta 1 es: " + deckCards.get(nr3)); 
+                    Random numR4 = new Random();
+                    int nr4 = numR4.nextInt(deckCards.size());
+                    deckCards.remove(nr4);
+                    System.out.println("La carta 2 es: " + deckCards.get(nr4)); 
+                    Random numR5 = new Random();
+                    int nr5 = numR5.nextInt(deckCards.size());
+                    deckCards.remove(nr5);
+                    System.out.println("La carta 3 es: " + deckCards.get(nr5)); 
+                    Random numR6 = new Random();
+                    int nr6 = numR6.nextInt(deckCards.size());
+                    deckCards.remove(nr6);
+                    System.out.println("La carta 4 es: " + deckCards.get(nr6)); 
+                    Random numR7 = new Random();
+                    int nr7 = numR7.nextInt(deckCards.size());  
+                    deckCards.remove(nr7);
+                    System.out.println("La carta 5 es: " + deckCards.get(nr7));
+                    System.out.println("Quedan " + deckCards.size() + " cartas");}
+   if (Menu == 0){
+                    System.out.println("Adios!");     
+                    System.exit(0);}
+   if (Menu > 4 && Menu <0){
+                    System.out.println("Opcion Invalida");     
+   }
    
 
-        Random numR2 = new Random();
-        int nr2 = numR2.nextInt(deckCards.size());
-        
-
-        System.out.println("Pick:"); 
-        deckCards.remove(nr2);
-        System.out.println("Carta removida: " + deckCards.get(nr2)); 
-        System.out.println("Quedan " + deckCards.size() + " cartas");
-        System.out.println("-----"); 
-        
-    
-        Random numR3 = new Random();
-        int nr3 = numR3.nextInt(deckCards.size());
-        
- 
-        System.out.println("Hand:");
-        deckCards.remove(nr3);
-        System.out.println("Carta removida: " + deckCards.get(nr3)); 
-        
-        
-
-        Random numR4 = new Random();
-        int nr4 = numR4.nextInt(deckCards.size());
-        
-
-        deckCards.remove(nr4);
-        System.out.println("Carta removida: " + deckCards.get(nr4)); 
-        
-        
-
-        Random numR5 = new Random();
-        int nr5 = numR2.nextInt(deckCards.size());
-        
-
-        deckCards.remove(nr5);
-        System.out.println("Carta removida: " + deckCards.get(nr5)); 
-        
-        
-
-        Random numR6 = new Random();
-        int nr6 = numR6.nextInt(deckCards.size());
-        
-
-        deckCards.remove(nr6);
-        System.out.println("Carta removida: " + deckCards.get(nr6)); 
-        
-        
-
-        Random numR7 = new Random();
-        int nr7 = numR7.nextInt(deckCards.size());
-   
-     
-        deckCards.remove(nr7);
-        System.out.println("Carta removida: " + deckCards.get(nr7)); 
-        System.out.println("Quedan " + deckCards.size() + " cartas");
-
-    
-    
-}
-}
+}}
